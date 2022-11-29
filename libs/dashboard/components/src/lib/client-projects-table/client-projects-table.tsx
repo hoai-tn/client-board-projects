@@ -9,7 +9,7 @@ import { getComparator, stableSort } from "../../helpers";
 
 import { IClientOpenProject, ITableHeadCell, OrderType } from "../../interfaces";
 
-const ConsultantTable = ({
+const ClientProjectsTable = ({
   clientDataTable,
   tableHeadFields,
 }: {
@@ -68,4 +68,4 @@ const ConsultantTable = ({
   );
 };
 
-export default ConsultantTable;
+export default ClientProjectsTable;
