@@ -1,0 +1,45 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/components-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/components-e2e/cypress.config.js",
+        "devServerTarget": "dashboard-components:storybook"
+      },
+      "configurations": {
+        "ci": {
+          "devServerTarget": "dashboard-components:storybook:ci"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/components-e2e/**/*.{js,ts}"]
+      }
+    },
+    "kitchen-sink": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "npm run api",
+          "npx nx format:write",
+          "npx nx workspace-lint",
+          "npx nx affected --target=lint --maxWarnings=0",
+          "npx nx affected --target=test",
+          "npx nx affected --target=build",
+          "npx nx affected --target=export",
+          "npx nx affected --target=e2e"
+        ],
+        "readyWhen": "READY",
+        "parallel": true
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["dashboard-components"]
+}
