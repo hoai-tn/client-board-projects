@@ -6,7 +6,12 @@ import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import SettingsIcon from "@mui/icons-material/Settings";
 
-const ClientProjectsTable = ({
+import ClientProjectsTable from "../client-projects-table/client-projects-table";
+
+import clientOpenProjects from "../../../storybook_public/config/client_open_projects.json";
+import { clientOpenProjectsHead } from "../../constants/index";
+
+const ClientProjectsBoard = ({
   title,
   children,
 }: {
@@ -14,21 +19,32 @@ const ClientProjectsTable = ({
   children: JSX.Element;
 }) => {
   return (
-    <Accordion sx={{ maxWidth: 1175 }}>
+    <Accordion
+      sx={{
+        maxWidth: 1156,
+      }}
+    >
       <AccordionSummary
         id="panel1a-header"
         expandIcon={<ExpandMoreIcon sx={{ color: "#6e6767" }} />}
         aria-controls="panel-account-settings-content"
         sx={{
           background: "#eecdb1e8",
+          "&.Mui-expanded": { minHeight: 52 },
+          minHeight: 52,
         }}
       >
         <SettingsIcon sx={{ marginRight: 4 }} />
-        <Typography>{title}</Typography>
+        <Typography>Client Active Projects</Typography>
       </AccordionSummary>
-      <AccordionDetails>{children}</AccordionDetails>
+      <AccordionDetails sx={{ padding: 0 }}>
+        <ClientProjectsTable
+          clientDataTable={clientOpenProjects}
+          tableHeadFields={clientOpenProjectsHead}
+        />
+      </AccordionDetails>
     </Accordion>
   );
 };
 
-export default ClientProjectsTable;
+export default ClientProjectsBoard;

@@ -1,0 +1,39 @@
+[
+    {
+      "id": "1",
+      "name": "Max",
+      "currentPhase": "Zoning",
+      "startDate": "10/1/2022",
+      "pauseDate": "12/31/2022",
+      "pauseReason": "Residential",
+      "manager": "Max",
+      "totalBudget": 2000,
+      "billed": 10,
+      "type": "top"
+    },
+    {
+      "id": "2",
+      "name": "Max",
+      "currentPhase": "Permitting",
+      "startDate": "10/1/2022",
+      "pauseDate": "12/31/2022",
+      "pauseReason": "Done",
+      "manager": "Wick",
+      "totalBudget": 1000,
+      "billed": 40,
+      "type": "school"
+    },
+    {
+      "id": "3",
+      "name": "Max",
+      "currentPhase": "Pre-Design",
+      "startDate": "1/10/2022",
+      "pauseDate": "1/1/2021",
+      "pauseReason": "Residential",
+      "manager": "Rick",
+      "totalBudget": 3000,
+      "billed": 40,
+      "type": "Multi-Family"
+    }
+  ]
+  

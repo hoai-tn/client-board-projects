@@ -2,6 +2,7 @@
   {
     "id": "1",
     "name": "Max",
+    "lostReason": 10,
     "startDate": "10/1/2022",
     "endDate": "12/31/2022",
     "manager": "Max",
@@ -12,21 +13,23 @@
   {
     "id": "2",
     "name": "Max",
-    "startDate": "10/1/2022",
-    "endDate": "12/31/2022",
+    "lostReason": 50,
+    "startDate": "1/10/2022",
+    "endDate": "1/1/2021",
     "manager": "Wick",
     "totalBudget": 1000,
     "overheadBilled": 40,
-    "type": "School"
+    "type": "Multi-Family"
   },
   {
     "id": "3",
     "name": "Max",
+    "lostReason": 30,
     "startDate": "1/10/2022",
     "endDate": "1/1/2021",
     "manager": "Rick",
     "totalBudget": 3000,
     "overheadBilled": 40,
-    "type": "Public Works"
+    "type": "School"
   }
 ]
