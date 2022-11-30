@@ -6,13 +6,13 @@ import {
 } from "@mui/material";
 import { visuallyHidden } from "@mui/utils";
 
-import { IClientOpenProject, TableProps } from "../../interfaces";
+import { IKeyOfClient, TableProps } from "../../interfaces";
 import { StyledTableCell } from "./style";
 
-export default function TableHeadeCell(props: TableProps) {
+export default function TableHeaderCell(props: TableProps) {
   const { tableHeadFields, order, orderBy, onRequestSort } = props;
   const createSortHandler =
-    (property: keyof IClientOpenProject) => (event: React.MouseEvent<unknown>) => {
+    (property: keyof IKeyOfClient) => (event: React.MouseEvent<unknown>) => {
       onRequestSort(event, property);
     };
   return (

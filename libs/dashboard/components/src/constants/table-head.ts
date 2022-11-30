@@ -1,6 +1,6 @@
 import { ITableHeadCell } from "../interfaces";
 
-export const ClientActiveProjects: readonly ITableHeadCell[] = [
+export const clientActiveHead: readonly ITableHeadCell[] = [
   {
     id: "name",
     numeric: false,
@@ -36,7 +36,6 @@ export const ClientActiveProjects: readonly ITableHeadCell[] = [
     numeric: true,
     label: "% Billed",
   },
-
   {
     id: "type",
     numeric: false,
@@ -49,7 +48,7 @@ export const ClientActiveProjects: readonly ITableHeadCell[] = [
   },
 ];
 
-export const ClientPausedProjects: readonly ITableHeadCell[] = [
+export const clientPausedHead: readonly ITableHeadCell[] = [
   {
     id: "name",
     numeric: false,
@@ -71,6 +70,11 @@ export const ClientPausedProjects: readonly ITableHeadCell[] = [
     label: "Pause Date",
   },
   {
+    id: "pauseReason",
+    numeric: false,
+    label: "Pause Reason",
+  },
+  {
     id: "manager",
     numeric: false,
     label: "Project Manager",
@@ -90,29 +94,61 @@ export const ClientPausedProjects: readonly ITableHeadCell[] = [
     numeric: false,
     label: "Project Type",
   },
-  {
-    id: "priority",
-    numeric: true,
-    label: "Project Priority",
-  },
 ];
 
-
-
-export const clientOpenProjectsHead: readonly ITableHeadCell[] = [
+export const clientOpenHead: readonly ITableHeadCell[] = [
   {
     id: "name",
     numeric: false,
     label: "Project Name",
   },
   {
-    id: "currentPhase",
+    id: "startDate",
     numeric: false,
-    label: "Current Phase",
+    label: "Start Date",
+  },
+  {
+    id: "endDate",
+    numeric: false,
+    label: "End date",
+  },
+  {
+    id: "manager",
+    numeric: false,
+    label: "Project Manager",
+  },
+  {
+    id: "totalBudget",
+    numeric: true,
+    label: "Total Budget",
+  },
+  {
+    id: "overheadBilled",
+    numeric: true,
+    label: "$ Overhead Billed",
+  },
+
+  {
+    id: "type",
+    numeric: false,
+    label: "Project Type",
+  },
+];
+
+export const clientCompletedHead: readonly ITableHeadCell[] = [
+  {
+    id: "name",
+    numeric: false,
+    label: "Project Name",
+  },
+  {
+    id: "profitMargin",
+    numeric: false,
+    label: "Profit Margin",
   },
   {
     id: "startDate",
-    numeric: false,
+    numeric: true,
     label: "Start Date",
   },
   {
@@ -141,9 +177,47 @@ export const clientOpenProjectsHead: readonly ITableHeadCell[] = [
     numeric: false,
     label: "Project Type",
   },
+];
+
+export const clientLostHead: readonly ITableHeadCell[] = [
   {
-    id: "priority",
+    id: "name",
+    numeric: false,
+    label: "Project Name",
+  },
+  {
+    id: "lossReason",
+    numeric: false,
+    label: "Loss Reason",
+  },
+  {
+    id: "startDate",
+    numeric: false,
+    label: "Start Date",
+  },
+  {
+    id: "endDate",
+    numeric: false,
+    label: "End date",
+  },
+  {
+    id: "manager",
+    numeric: false,
+    label: "Project Manager",
+  },
+  {
+    id: "totalBudget",
     numeric: true,
-    label: "Project Priority",
+    label: "Total Budget",
+  },
+  {
+    id: "overheadBilled",
+    numeric: true,
+    label: "$ Overhead Billed",
+  },
+  {
+    id: "type",
+    numeric: false,
+    label: "Project Type",
   },
 ];

@@ -1,49 +1,68 @@
-import Accordion from "@mui/material/Accordion";
-import AccordionSummary from "@mui/material/AccordionSummary";
-import AccordionDetails from "@mui/material/AccordionDetails";
-import Typography from "@mui/material/Typography";
-
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import SettingsIcon from "@mui/icons-material/Settings";
-
 import ClientProjectsTable from "../client-projects-table/client-projects-table";
 
-import clientOpenProjects from "../../../storybook_public/config/client_open_projects.json";
-import { clientOpenProjectsHead } from "../../constants/index";
-
+import {
+  clientActiveHead,
+  clientCompletedHead,
+  clientLostHead,
+  clientOpenHead,
+  clientPausedHead,
+} from "../../constants";
+import { Box } from "@mui/material";
+import {
+  IClientActive,
+  IClientCompleted,
+  IClientLost,
+  IClientOpen,
+  IClientPaused,
+} from "../../interfaces";
+import ClientProjectsAccordion from "./client-projects-accordion";
+interface IClientProjectsBoardProps {
+  clientActiveProjects: IClientActive[];
+  clientPausedProjects: IClientPaused[];
+  clientOpenProjects: IClientOpen[];
+  clientCompletedProjects: IClientCompleted[];
+  clientLostProjects: IClientLost[];
+}
 const ClientProjectsBoard = ({
-  title,
-  children,
-}: {
-  title: string;
-  children: JSX.Element;
-}) => {
+  clientActiveProjects,
+  clientPausedProjects,
+  clientOpenProjects,
+  clientCompletedProjects,
+  clientLostProjects,
+}: IClientProjectsBoardProps) => {
   return (
-    <Accordion
-      sx={{
-        maxWidth: 1156,
-      }}
-    >
-      <AccordionSummary
-        id="panel1a-header"
-        expandIcon={<ExpandMoreIcon sx={{ color: "#6e6767" }} />}
-        aria-controls="panel-account-settings-content"
-        sx={{
-          background: "#eecdb1e8",
-          "&.Mui-expanded": { minHeight: 52 },
-          minHeight: 52,
-        }}
-      >
-        <SettingsIcon sx={{ marginRight: 4 }} />
-        <Typography>Client Active Projects</Typography>
-      </AccordionSummary>
-      <AccordionDetails sx={{ padding: 0 }}>
+    <Box marginTop={1}>
+      <ClientProjectsAccordion title="Client Active Projects">
+        <ClientProjectsTable
+          clientDataTable={clientActiveProjects}
+          tableHeadFields={clientActiveHead}
+        />
+      </ClientProjectsAccordion>
+      <ClientProjectsAccordion title="Client Paused Projects">
+        <ClientProjectsTable
+          clientDataTable={clientPausedProjects}
+          tableHeadFields={clientPausedHead}
+        />
+      </ClientProjectsAccordion>
+      <ClientProjectsAccordion title="Client Open Opportunities">
         <ClientProjectsTable
           clientDataTable={clientOpenProjects}
-          tableHeadFields={clientOpenProjectsHead}
+          tableHeadFields={clientOpenHead}
         />
-      </AccordionDetails>
-    </Accordion>
+      </ClientProjectsAccordion>
+      <ClientProjectsAccordion title="Client Completed Projects">
+        <ClientProjectsTable
+          clientDataTable={clientCompletedProjects}
+          tableHeadFields={clientCompletedHead}
+        />
+      </ClientProjectsAccordion>
+      <ClientProjectsAccordion title="Client Lost Projects">
+        <ClientProjectsTable
+          clientDataTable={clientLostProjects}
+          tableHeadFields={clientLostHead}
+        />
+      </ClientProjectsAccordion>
+    </Box>
   );
 };
 

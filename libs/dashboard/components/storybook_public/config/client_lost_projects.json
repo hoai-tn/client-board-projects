@@ -1,8 +1,8 @@
 [
   {
     "id": "1",
-    "name": "Max",
-    "lostReason": 10,
+    "name": "Project 1",
+    "lossReason": "price",
     "startDate": "10/1/2022",
     "endDate": "12/31/2022",
     "manager": "Max",
@@ -12,8 +12,8 @@
   },
   {
     "id": "2",
-    "name": "Max",
-    "lostReason": 50,
+    "name": "Project 2",
+    "lossReason": "price",
     "startDate": "1/10/2022",
     "endDate": "1/1/2021",
     "manager": "Wick",
@@ -23,8 +23,8 @@
   },
   {
     "id": "3",
-    "name": "Max",
-    "lostReason": 30,
+    "name": "Project 3",
+    "lossReason": "price",
     "startDate": "1/10/2022",
     "endDate": "1/1/2021",
     "manager": "Rick",

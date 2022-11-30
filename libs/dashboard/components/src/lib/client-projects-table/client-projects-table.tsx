@@ -7,24 +7,29 @@ import TableHead from "./table-head";
 
 import { getComparator, stableSort } from "../../helpers";
 
-import { IClientOpenProject, ITableHeadCell, OrderType } from "../../interfaces";
+import {
+  ClientProjectsDataType,
+  IKeyOfClient,
+  ITableHeadCell,
+  OrderType,
+} from "../../interfaces";
 
 const ClientProjectsTable = ({
   clientDataTable,
   tableHeadFields,
 }: {
-  clientDataTable: IClientOpenProject[];
+  clientDataTable: ClientProjectsDataType;
   tableHeadFields: readonly ITableHeadCell[];
 }) => {
-  const [dataTable, setDataTable] = useState<IClientOpenProject[]>(
+  const [dataTable, setDataTable] = useState<ClientProjectsDataType>(
     () => clientDataTable
   );
   const [order, setOrder] = useState<OrderType>("asc");
-  const [orderBy, setOrderBy] = useState<keyof IClientOpenProject | null>(null);
+  const [orderBy, setOrderBy] = useState<keyof IKeyOfClient | null>(null);
 
   const handleRequestSort = (
     event: MouseEvent<unknown>,
-    property: keyof IClientOpenProject
+    property: keyof IKeyOfClient
   ) => {
     const isAsc = orderBy === property && order === "asc";
     setOrder(isAsc ? "desc" : "asc");
@@ -33,6 +38,10 @@ const ClientProjectsTable = ({
       ...stableSort(dataTable, getComparator(isAsc ? "desc" : "asc", property)),
     ]);
   };
+  const formatter = new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
+  });
 
   return (
     <Table data-testid="client-project-table">
@@ -43,7 +52,7 @@ const ClientProjectsTable = ({
         onRequestSort={handleRequestSort}
       />
       <TableBody>
-        {dataTable?.map((row: IClientOpenProject) => (
+        {dataTable?.map((row) => (
           <TableRow
             key={row.id}
             sx={{ "&:last-child td, &:last-child th": { borderBottom: 0 } }}
@@ -54,8 +63,13 @@ const ClientProjectsTable = ({
                   return null;
                 case "totalBudget":
                 case "overheadBilled":
-                  return <StyledTableCell key={key}> ${value}</StyledTableCell>;
+                  return (
+                    <StyledTableCell key={key}>
+                      {formatter.format(value)}
+                    </StyledTableCell>
+                  );
                 case "billed":
+                case "profitMargin":
                   return <StyledTableCell key={key}> {value}%</StyledTableCell>;
                 default:
                   return <StyledTableCell key={key}> {value}</StyledTableCell>;

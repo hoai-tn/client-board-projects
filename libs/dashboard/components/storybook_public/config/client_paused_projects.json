@@ -1,7 +1,7 @@
 [
     {
       "id": "1",
-      "name": "Max",
+      "name": "Project 1",
       "currentPhase": "Zoning",
       "startDate": "10/1/2022",
       "pauseDate": "12/31/2022",
@@ -13,7 +13,7 @@
     },
     {
       "id": "2",
-      "name": "Max",
+      "name": "Project 2",
       "currentPhase": "Permitting",
       "startDate": "10/1/2022",
       "pauseDate": "12/31/2022",
@@ -25,13 +25,13 @@
     },
     {
       "id": "3",
-      "name": "Max",
+      "name": "Project 3",
       "currentPhase": "Pre-Design",
       "startDate": "1/10/2022",
       "pauseDate": "1/1/2021",
       "pauseReason": "Residential",
       "manager": "Rick",
-      "totalBudget": 3000,
+      "totalBudget": 300.30,
       "billed": 40,
       "type": "Multi-Family"
     }

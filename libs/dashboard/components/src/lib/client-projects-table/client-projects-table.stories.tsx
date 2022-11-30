@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 import clientOpenProjects from "../../../storybook_public/config/client_open_projects.json";
-import { clientOpenProjectsHead } from "../../constants/index";
+import { clientCompletedHead } from "../../constants";
 import ClientProjectsTable from "./client-projects-table";
 export default {
   component: ClientProjectsTable,
@@ -28,5 +28,5 @@ const Template: ComponentStory<typeof ClientProjectsTable> = (args) => {
 export const Primary = Template.bind({});
 Primary.args = {
   clientDataTable: clientOpenProjects,
-  tableHeadFields: clientOpenProjectsHead,
+  tableHeadFields: clientCompletedHead,
 };
