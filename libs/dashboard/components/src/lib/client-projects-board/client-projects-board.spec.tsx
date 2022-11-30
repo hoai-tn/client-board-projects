@@ -1,5 +1,5 @@
 import { render } from "@testing-library/react";
-import ClientProjectsBoard from "./client-projects-boards";
+import ClientProjectsBoard from "./client-projects-board";
 
 import clientActiveProjects from "../../../storybook_public/config/client_active_projects.json";
 import clientPausedProjects from "../../../storybook_public/config/client_paused_projects.json";

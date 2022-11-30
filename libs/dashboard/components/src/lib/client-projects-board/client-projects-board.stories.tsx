@@ -7,7 +7,7 @@ import clientOpenProjects from "../../../storybook_public/config/client_open_pro
 import clientCompletedProjects from "../../../storybook_public/config/client_completed_projects.json";
 import clientLostProjects from "../../../storybook_public/config/client_lost_projects.json";
 
-import ClientProjectsBoard from "./client-projects-boards";
+import ClientProjectsBoard from "./client-projects-board";
 export default {
   component: ClientProjectsBoard,
 } as ComponentMeta<typeof ClientProjectsBoard>;

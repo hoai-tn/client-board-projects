@@ -1,4 +1,5 @@
-import ClientProjectsTable from "../client-projects-table/client-projects-table";
+import { Box } from "@mui/material";
+import ClientProjectsAccordion from "./client-projects-accordion";
 
 import {
   clientActiveHead,
@@ -7,22 +8,9 @@ import {
   clientOpenHead,
   clientPausedHead,
 } from "../../constants";
-import { Box } from "@mui/material";
-import {
-  IClientActive,
-  IClientCompleted,
-  IClientLost,
-  IClientOpen,
-  IClientPaused,
-} from "../../interfaces";
-import ClientProjectsAccordion from "./client-projects-accordion";
-interface IClientProjectsBoardProps {
-  clientActiveProjects: IClientActive[];
-  clientPausedProjects: IClientPaused[];
-  clientOpenProjects: IClientOpen[];
-  clientCompletedProjects: IClientCompleted[];
-  clientLostProjects: IClientLost[];
-}
+import { IClientProjectsBoardProps } from "../../interfaces";
+import ClientProjectsTable from "../client-projects-table/client-projects-table";
+
 const ClientProjectsBoard = ({
   clientActiveProjects,
   clientPausedProjects,

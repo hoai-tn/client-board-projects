@@ -91,3 +91,10 @@ export interface TableProps {
 export type ClientProjectsDataType = Array<
   IClientActive | IClientPaused | IClientOpen | IClientCompleted | IClientLost
 >;
+export interface IClientProjectsBoardProps {
+  clientActiveProjects: IClientActive[];
+  clientPausedProjects: IClientPaused[];
+  clientOpenProjects: IClientOpen[];
+  clientCompletedProjects: IClientCompleted[];
+  clientLostProjects: IClientLost[];
+}
