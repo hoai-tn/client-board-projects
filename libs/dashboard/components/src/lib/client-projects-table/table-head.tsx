@@ -6,7 +6,7 @@ import {
 } from "@mui/material";
 import { visuallyHidden } from "@mui/utils";
 
-import { IKeyOfClient, TableProps } from "../../interfaces";
+import { IKeyOfClient, TableProps } from "../../constants";
 import { StyledTableCell } from "./style";
 
 export default function TableHeaderCell(props: TableProps) {

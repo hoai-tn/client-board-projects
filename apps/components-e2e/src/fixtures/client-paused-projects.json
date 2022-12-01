@@ -1,0 +1,35 @@
+[
+    {
+      "name": "Project 1",
+      "currentPhase": "Zoning",
+      "startDate": "10/1/2022",
+      "pauseDate": "12/31/2022",
+      "pauseReason": "Residential",
+      "manager": "Max",
+      "totalBudget": "$2,000",
+      "billed": "10%",
+      "type": "top"
+    },
+    {
+      "name": "Project 2",
+      "currentPhase": "Permitting",
+      "startDate": "10/1/2022",
+      "pauseDate": "12/31/2022",
+      "pauseReason": "Done",
+      "manager": "Wick",
+      "totalBudget": "$1,000",
+      "billed": "40%",
+      "type": "school"
+    },
+    {
+      "name": "Project 3",
+      "currentPhase": "Pre-Design",
+      "startDate": "1/10/2022",
+      "pauseDate": "1/1/2021",
+      "pauseReason": "Residential",
+      "manager": "Rick",
+      "totalBudget": "$300.3",
+      "billed": "40%",
+      "type": "Multi-Family"
+    }
+  ]

@@ -14,7 +14,7 @@ export const clientActiveHead: readonly ITableHeadCell[] = [
   {
     id: "startDate",
     numeric: false,
-    label: "Start Date",
+    label: "Start date",
   },
   {
     id: "endDate",
@@ -62,12 +62,12 @@ export const clientPausedHead: readonly ITableHeadCell[] = [
   {
     id: "startDate",
     numeric: false,
-    label: "Start Date",
+    label: "Start date",
   },
   {
     id: "pauseDate",
     numeric: false,
-    label: "Pause Date",
+    label: "Pause date",
   },
   {
     id: "pauseReason",
@@ -105,7 +105,7 @@ export const clientOpenHead: readonly ITableHeadCell[] = [
   {
     id: "startDate",
     numeric: false,
-    label: "Start Date",
+    label: "Start date",
   },
   {
     id: "endDate",
@@ -149,7 +149,7 @@ export const clientCompletedHead: readonly ITableHeadCell[] = [
   {
     id: "startDate",
     numeric: true,
-    label: "Start Date",
+    label: "Start date",
   },
   {
     id: "endDate",
@@ -193,7 +193,7 @@ export const clientLostHead: readonly ITableHeadCell[] = [
   {
     id: "startDate",
     numeric: false,
-    label: "Start Date",
+    label: "Start date",
   },
   {
     id: "endDate",

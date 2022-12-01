@@ -1,11 +1,10 @@
 [
     "Project Name",
-    "Current Phase",
+    "Loss Reason",
     "Start date",
-    "Pause date",
-    "Pause Reason",
+    "End date",
     "Project Manager",
     "Total Budget",
-    "% Billed",
+    "$ Overhead Billed",
     "Project Type"
 ]

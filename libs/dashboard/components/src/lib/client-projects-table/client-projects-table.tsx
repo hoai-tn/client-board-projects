@@ -12,7 +12,7 @@ import {
   IKeyOfClient,
   ITableHeadCell,
   OrderType,
-} from "../../interfaces";
+} from "../../constants";
 
 const ClientProjectsTable = ({
   clientDataTable,
@@ -22,14 +22,14 @@ const ClientProjectsTable = ({
   tableHeadFields: readonly ITableHeadCell[];
 }) => {
   const [dataTable, setDataTable] = useState<ClientProjectsDataType>(
-    () => clientDataTable
+    () => clientDataTable,
   );
   const [order, setOrder] = useState<OrderType>("asc");
   const [orderBy, setOrderBy] = useState<keyof IKeyOfClient | null>(null);
 
   const handleRequestSort = (
     event: MouseEvent<unknown>,
-    property: keyof IKeyOfClient
+    property: keyof IKeyOfClient,
   ) => {
     const isAsc = orderBy === property && order === "asc";
     setOrder(isAsc ? "desc" : "asc");

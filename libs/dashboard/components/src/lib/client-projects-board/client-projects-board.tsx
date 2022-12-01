@@ -7,8 +7,8 @@ import {
   clientLostHead,
   clientOpenHead,
   clientPausedHead,
+  IClientProjectsBoardProps,
 } from "../../constants";
-import { IClientProjectsBoardProps } from "../../interfaces";
 import ClientProjectsTable from "../client-projects-table/client-projects-table";
 
 const ClientProjectsBoard = ({
@@ -20,31 +20,46 @@ const ClientProjectsBoard = ({
 }: IClientProjectsBoardProps) => {
   return (
     <Box marginTop={1}>
-      <ClientProjectsAccordion title="Client Active Projects">
+      <ClientProjectsAccordion
+        dataTestId="client-active"
+        title="Client Active Projects"
+      >
         <ClientProjectsTable
           clientDataTable={clientActiveProjects}
           tableHeadFields={clientActiveHead}
         />
       </ClientProjectsAccordion>
-      <ClientProjectsAccordion title="Client Paused Projects">
+      <ClientProjectsAccordion
+        title="Client Paused Projects"
+        dataTestId="client-paused"
+      >
         <ClientProjectsTable
           clientDataTable={clientPausedProjects}
           tableHeadFields={clientPausedHead}
         />
       </ClientProjectsAccordion>
-      <ClientProjectsAccordion title="Client Open Opportunities">
+      <ClientProjectsAccordion
+        title="Client Open Opportunities"
+        dataTestId="client-open"
+      >
         <ClientProjectsTable
           clientDataTable={clientOpenProjects}
           tableHeadFields={clientOpenHead}
         />
       </ClientProjectsAccordion>
-      <ClientProjectsAccordion title="Client Completed Projects">
+      <ClientProjectsAccordion
+        title="Client Completed Projects"
+        dataTestId="client-completed"
+      >
         <ClientProjectsTable
           clientDataTable={clientCompletedProjects}
           tableHeadFields={clientCompletedHead}
         />
       </ClientProjectsAccordion>
-      <ClientProjectsAccordion title="Client Lost Projects">
+      <ClientProjectsAccordion
+        title="Client Lost Projects"
+        dataTestId="client-lost"
+      >
         <ClientProjectsTable
           clientDataTable={clientLostProjects}
           tableHeadFields={clientLostHead}

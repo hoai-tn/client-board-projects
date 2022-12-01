@@ -1,0 +1,32 @@
+[
+    {
+      "name": "Project 1",
+      "lossReason": "price",
+      "startDate": "10/1/2022",
+      "endDate": "12/31/2022",
+      "manager": "Max",
+      "totalBudget": "$2,000",
+      "overheadBilled": "10",
+      "type": "Residential"
+    },
+    {
+      "name": "Project 2",
+      "lossReason": "price",
+      "startDate": "1/10/2022",
+      "endDate": "1/1/2021",
+      "manager": "Wick",
+      "totalBudget": "$1,000",
+      "overheadBilled": "40",
+      "type": "Multi-Family"
+    },
+    {
+      "name": "Project 3",
+      "lossReason": "price",
+      "startDate": "1/10/2022",
+      "endDate": "1/1/2021",
+      "manager": "Rick",
+      "totalBudget": "$3,000",
+      "overheadBilled": "40",
+      "type": "School"
+    }
+  ]
