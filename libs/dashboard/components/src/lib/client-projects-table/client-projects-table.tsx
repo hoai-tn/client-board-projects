@@ -5,31 +5,28 @@ import { StyledTableCell } from "./style";
 
 import TableHead from "./table-head";
 
-import { getComparator, stableSort } from "../../helpers";
+import { currencyFormatter, getComparator, stableSort } from "../../helpers";
 
 import {
   ClientProjectsDataType,
-  IKeyOfClient,
-  ITableHeadCell,
+  IClientProjectsTableProps,
   OrderType,
 } from "../../constants";
+import { IKeyOfClient } from "../../interfaces";
 
 const ClientProjectsTable = ({
   clientDataTable,
   tableHeadFields,
-}: {
-  clientDataTable: ClientProjectsDataType;
-  tableHeadFields: readonly ITableHeadCell[];
-}) => {
+}: IClientProjectsTableProps) => {
   const [dataTable, setDataTable] = useState<ClientProjectsDataType>(
-    () => clientDataTable,
+    () => clientDataTable
   );
   const [order, setOrder] = useState<OrderType>("asc");
   const [orderBy, setOrderBy] = useState<keyof IKeyOfClient | null>(null);
 
   const handleRequestSort = (
     event: MouseEvent<unknown>,
-    property: keyof IKeyOfClient,
+    property: keyof IKeyOfClient
   ) => {
     const isAsc = orderBy === property && order === "asc";
     setOrder(isAsc ? "desc" : "asc");
@@ -38,11 +35,6 @@ const ClientProjectsTable = ({
       ...stableSort(dataTable, getComparator(isAsc ? "desc" : "asc", property)),
     ]);
   };
-  const formatter = new Intl.NumberFormat("en-US", {
-    style: "currency",
-    currency: "USD",
-    minimumFractionDigits: 0,
-  });
 
   return (
     <Table data-testid="client-project-table">
@@ -66,7 +58,7 @@ const ClientProjectsTable = ({
                 case "overheadBilled":
                   return (
                     <StyledTableCell key={key}>
-                      {formatter.format(value)}
+                      {currencyFormatter.format(value)}
                     </StyledTableCell>
                   );
                 case "billed":

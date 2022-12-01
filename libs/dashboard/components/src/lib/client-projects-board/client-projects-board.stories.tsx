@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 import clientActiveProjects from "../../../storybook_public/config/client_active_projects.json";
@@ -13,7 +12,6 @@ export default {
 } as ComponentMeta<typeof ClientProjectsBoard>;
 
 const Template: ComponentStory<typeof ClientProjectsBoard> = (args) => {
-  const [testData, setTestData] = useState<string>(JSON.stringify({ ...args }));
   return (
     <>
       <ClientProjectsBoard {...args} />
@@ -21,7 +19,7 @@ const Template: ComponentStory<typeof ClientProjectsBoard> = (args) => {
         <textarea
           id="text-area-test-data"
           style={{ width: 1156, height: 148, marginTop: 10 }}
-          value={testData}
+          value={JSON.stringify({ ...args })}
         ></textarea>
       </pre>
     </>

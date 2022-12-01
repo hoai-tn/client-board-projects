@@ -1,6 +1,6 @@
 import { IKeyOfClient, OrderType } from "../interfaces";
 
-export function getComparator<Key extends keyof IKeyOfClient>(
+function getComparator<Key extends keyof IKeyOfClient>(
   order: OrderType,
   orderBy: any
 ): (
@@ -12,7 +12,7 @@ export function getComparator<Key extends keyof IKeyOfClient>(
     : (a, b) => -descendingComparator(a, b, orderBy);
 }
 
-export function stableSort<T>(array: T[], comparator: (a: T, b: T) => number) {
+function stableSort<T>(array: T[], comparator: (a: T, b: T) => number) {
   const stabilizedThis =
     array && array.map((el, index) => [el, index] as [T, number]);
   stabilizedThis &&
@@ -35,3 +35,11 @@ function descendingComparator<T>(a: T, b: T, orderBy: keyof T) {
   }
   return 0;
 }
+
+const currencyFormatter = new Intl.NumberFormat("en-US", {
+  style: "currency",
+  currency: "USD",
+  minimumFractionDigits: 0,
+});
+
+export { getComparator, stableSort, currencyFormatter };

@@ -98,3 +98,8 @@ export interface IClientProjectsBoardProps {
   clientCompletedProjects: IClientCompleted[];
   clientLostProjects: IClientLost[];
 }
+
+export interface IClientProjectsTableProps {
+  clientDataTable: ClientProjectsDataType;
+  tableHeadFields: readonly ITableHeadCell[];
+}
