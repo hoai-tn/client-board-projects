@@ -1,15 +1,43 @@
 import { expect } from "chai";
 describe("Client Projects Table", () => {
-  let clientProjectsHead: string[];
-  let clientOpenProjects: object[];
-  before(() => {
-    cy.fixture("client-open-head").then((value) => {
-      clientProjectsHead = value;
-    });
-    cy.fixture("client-open-projects").then((value) => {
-      clientOpenProjects = value;
-    });
-  });
+  const clientProjectsHead: string[] = [
+    "Project Name",
+    "Start date",
+    "End date",
+    "Project Manager",
+    "Total Budget",
+    "$ Overhead Billed",
+    "Project Type",
+  ];
+  const clientOpenProjects: object[] = [
+    {
+      name: "Project 1",
+      startDate: "10/1/2022",
+      endDate: "12/31/2022",
+      manager: "Max",
+      totalBudget: "$2,000",
+      overheadBilled: "$10",
+      type: "Residential",
+    },
+    {
+      name: "Project 2",
+      startDate: "10/1/2022",
+      endDate: "12/31/2022",
+      manager: "Wick",
+      totalBudget: "$1,000",
+      overheadBilled: "$40",
+      type: "School",
+    },
+    {
+      name: "Project 3",
+      startDate: "1/10/2022",
+      endDate: "1/1/2021",
+      manager: "Rick",
+      totalBudget: "$3,000",
+      overheadBilled: "$40",
+      type: "Public Works",
+    },
+  ];
 
   beforeEach(() => {
     cy.visit(

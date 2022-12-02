@@ -1,5 +1,4 @@
 import {
-  Box,
   Typography,
   AccordionDetails,
   AccordionSummary,
@@ -15,7 +14,7 @@ const ClientProjectsAccordion = ({
   children,
 }: {
   title: string;
-  dataTestId ?: string;
+  dataTestId?: string;
   children: JSX.Element;
 }) => {
   return (
@@ -25,6 +24,9 @@ const ClientProjectsAccordion = ({
         maxWidth: 1156,
         boxShadow: 0,
         margin: "4px 0px",
+        "&.Mui-expanded": {
+          margin: 0,
+        },
       }}
       defaultExpanded={true}
     >
@@ -36,9 +38,6 @@ const ClientProjectsAccordion = ({
           background: "#eecdb1e8",
           "&.Mui-expanded": { minHeight: 52, margin: 0 },
           height: 52,
-          "& .css-o4b71y-MuiAccordionSummary-content.Mui-expanded": {
-            margin: 0,
-          },
         }}
       >
         <AccountTreeIcon sx={{ color: "#6e6767", marginRight: 4 }} />

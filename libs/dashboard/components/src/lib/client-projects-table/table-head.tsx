@@ -1,9 +1,4 @@
-import {
-  TableRow,
-  TableHead,
-  TableSortLabel,
-  Box,
-} from "@mui/material";
+import { TableRow, TableHead, TableSortLabel, Box } from "@mui/material";
 import { visuallyHidden } from "@mui/utils";
 
 import { IKeyOfClient, TableProps } from "../../constants";
