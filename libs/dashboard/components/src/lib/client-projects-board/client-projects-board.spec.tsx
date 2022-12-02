@@ -294,7 +294,9 @@ describe("Client Projects Board", () => {
     clientPausedHead.forEach((item, index) => {
       expect(
         baseElement.querySelector(
-          `[data-testid='client-paused'] table>thead>tr>:nth-child(${index + 1}) span`
+          `[data-testid='client-paused'] table>thead>tr>:nth-child(${
+            index + 1
+          }) span`
         )?.textContent
       ).toContain(item);
     });
@@ -303,9 +305,9 @@ describe("Client Projects Board", () => {
       Object.entries(rowItem).forEach(([key, value], colIndex) => {
         expect(
           baseElement.querySelector(
-            `[data-testid='client-paused'] table>tbody>:nth-child(${rowIndex + 1})>:nth-child(${
-              colIndex + 1
-            })`
+            `[data-testid='client-paused'] table>tbody>:nth-child(${
+              rowIndex + 1
+            })>:nth-child(${colIndex + 1})`
           )?.textContent
         ).toContain(value);
       });
@@ -329,7 +331,9 @@ describe("Client Projects Board", () => {
     clientOpenHead.forEach((item, index) => {
       expect(
         baseElement.querySelector(
-          `[data-testid='client-open'] table>thead>tr>:nth-child(${index + 1}) span`
+          `[data-testid='client-open'] table>thead>tr>:nth-child(${
+            index + 1
+          }) span`
         )?.textContent
       ).toContain(item);
     });
@@ -338,9 +342,9 @@ describe("Client Projects Board", () => {
       Object.entries(rowItem).forEach(([key, value], colIndex) => {
         expect(
           baseElement.querySelector(
-            `[data-testid='client-open'] table>tbody>:nth-child(${rowIndex + 1})>:nth-child(${
-              colIndex + 1
-            })`
+            `[data-testid='client-open'] table>tbody>:nth-child(${
+              rowIndex + 1
+            })>:nth-child(${colIndex + 1})`
           )?.textContent
         ).toContain(value);
       });
@@ -365,7 +369,9 @@ describe("Client Projects Board", () => {
     clientCompletedHead.forEach((item, index) => {
       expect(
         baseElement.querySelector(
-          `[data-testid='client-completed'] table>thead>tr>:nth-child(${index + 1}) span`
+          `[data-testid='client-completed'] table>thead>tr>:nth-child(${
+            index + 1
+          }) span`
         )?.textContent
       ).toContain(item);
     });
@@ -374,9 +380,9 @@ describe("Client Projects Board", () => {
       Object.entries(rowItem).forEach(([key, value], colIndex) => {
         expect(
           baseElement.querySelector(
-            `[data-testid='client-completed'] table>tbody>:nth-child(${rowIndex + 1})>:nth-child(${
-              colIndex + 1
-            })`
+            `[data-testid='client-completed'] table>tbody>:nth-child(${
+              rowIndex + 1
+            })>:nth-child(${colIndex + 1})`
           )?.textContent
         ).toContain(value);
       });
@@ -400,7 +406,9 @@ describe("Client Projects Board", () => {
     clientLostHead.forEach((item, index) => {
       expect(
         baseElement.querySelector(
-          `[data-testid='client-lost'] table>thead>tr>:nth-child(${index + 1}) span`
+          `[data-testid='client-lost'] table>thead>tr>:nth-child(${
+            index + 1
+          }) span`
         )?.textContent
       ).toContain(item);
     });
@@ -409,9 +417,9 @@ describe("Client Projects Board", () => {
       Object.entries(rowItem).forEach(([key, value], colIndex) => {
         expect(
           baseElement.querySelector(
-            `[data-testid='client-lost'] table>tbody>:nth-child(${rowIndex + 1})>:nth-child(${
-              colIndex + 1
-            })`
+            `[data-testid='client-lost'] table>tbody>:nth-child(${
+              rowIndex + 1
+            })>:nth-child(${colIndex + 1})`
           )?.textContent
         ).toContain(value);
       });

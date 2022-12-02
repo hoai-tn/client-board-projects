@@ -7,16 +7,13 @@ import {
 
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import AccountTreeIcon from "@mui/icons-material/AccountTree";
+import { IClientProjectAccordionProps } from "../../interfaces";
 
 const ClientProjectsAccordion = ({
-  title,
-  dataTestId,
-  children,
-}: {
-  title: string;
-  dataTestId?: string;
-  children: JSX.Element;
-}) => {
+                                  title,
+                                  dataTestId,
+                                  children,
+                                }: IClientProjectAccordionProps) => {
   return (
     <Accordion
       data-testid={dataTestId}

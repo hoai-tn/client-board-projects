@@ -98,3 +98,9 @@ export interface IClientProjectsBoardProps {
   clientCompletedProjects: IClientCompleted[];
   clientLostProjects: IClientLost[];
 }
+
+export interface IClientProjectAccordionProps{
+  title: string;
+  dataTestId?: string;
+  children: JSX.Element;
+}

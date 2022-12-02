@@ -12,12 +12,12 @@ import {
 import ClientProjectsTable from "../client-projects-table/client-projects-table";
 
 const ClientProjectsBoard = ({
-  clientActiveProjects,
-  clientPausedProjects,
-  clientOpenProjects,
-  clientCompletedProjects,
-  clientLostProjects,
-}: IClientProjectsBoardProps) => {
+                              clientActiveProjects,
+                              clientPausedProjects,
+                              clientOpenProjects,
+                              clientCompletedProjects,
+                              clientLostProjects,
+                            }: IClientProjectsBoardProps) => {
   return (
     <Box marginTop={1}>
       <ClientProjectsAccordion

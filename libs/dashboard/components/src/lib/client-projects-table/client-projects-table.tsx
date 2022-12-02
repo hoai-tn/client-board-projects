@@ -15,9 +15,9 @@ import {
 import { IKeyOfClient } from "../../interfaces";
 
 const ClientProjectsTable = ({
-  clientDataTable,
-  tableHeadFields,
-}: IClientProjectsTableProps) => {
+                              clientDataTable,
+                              tableHeadFields,
+                            }: IClientProjectsTableProps) => {
   const [dataTable, setDataTable] = useState<ClientProjectsDataType>(
     () => clientDataTable
   );
