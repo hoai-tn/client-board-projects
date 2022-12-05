@@ -52,6 +52,18 @@ describe("Client Projects Table", () => {
         item
       );
     });
+    cy.get("table thead span").invoke('text').should(($row) => {
+      console.log("-head")
+      // access the native DOM element
+      console.log($row) 
+      // expect($div.get(0).innerText).to.eq('foobarbaz')
+    })
+    cy.get("table>tbody>tr>td").should(($value) => {
+      console.log(" - body")
+      // access the native DOM element
+      console.log($value.get(24).innerText) 
+      // expect($div.get(0).innerText).to.eq('foobarbaz')
+    })
   });
   it("should fill Client Projects data on the table", () => {
     clientOpenProjects.forEach((rowItem, rowIndex) => {
@@ -62,13 +74,5 @@ describe("Client Projects Table", () => {
       });
     });
   });
-  it("should fill Client Projects data on the text-area", () => {
-    cy.get("#text-area-test-data")
-      .invoke("val")
-      .should((text) => {
-        expect(text).to.equal(
-          '[{"id":"1","name":"Project 1","startDate":"10/1/2022","endDate":"12/31/2022","manager":"Max","totalBudget":2000,"overheadBilled":10,"type":"Residential"},{"id":"2","name":"Project 2","startDate":"10/1/2022","endDate":"12/31/2022","manager":"Wick","totalBudget":1000,"overheadBilled":40,"type":"School"},{"id":"3","name":"Project 3","startDate":"1/10/2022","endDate":"1/1/2021","manager":"Rick","totalBudget":3000,"overheadBilled":40,"type":"Public Works"}]'
-        );
-      });
-  });
+
 });

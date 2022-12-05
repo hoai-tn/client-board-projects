@@ -78,18 +78,7 @@ export default {
 } as ComponentMeta<typeof ClientProjectsTable>;
 
 const Template: ComponentStory<typeof ClientProjectsTable> = (args) => {
-  return (
-    <>
-      <ClientProjectsTable {...args} />
-      <pre>
-        <textarea
-          id="text-area-test-data"
-          style={{ width: 1591, height: 148, marginTop: 10 }}
-          value={JSON.stringify(args.clientDataTable)}
-        ></textarea>
-      </pre>
-    </>
-  );
+  return <ClientProjectsTable {...args} />;
 };
 
 export const Primary = Template.bind({});
