@@ -14,16 +14,19 @@ export const customizeDataGrid = {
     display: "none",
   },
   "& .MuiDataGrid-root, & .MuiDataGrid-cell:focus, & .MuiDataGrid-columnHeader:focus,& .MuiDataGrid-columnHeader:focus-within":
-    {
-      outline: 0,
-    },
+  {
+    outline: 0,
+  },
   "& .MuiDataGrid-cell, .MuiDataGrid": {
     border: "none",
   },
   "& .MuiDataGrid-footerContainer": {
     display: "hidden",
   },
-  ".MuiDataGrid-row.Mui-selected:hover": {
-    backgroundColor: "none",
+  ".MuiDataGrid-row.Mui-selected": {
+    backgroundColor: "white !important",
   },
+  "& .MuiDataGrid-row:hover": {
+    backgroundColor: "white"
+  }
 };
