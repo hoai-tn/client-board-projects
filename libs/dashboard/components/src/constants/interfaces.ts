@@ -1,7 +1,10 @@
+import { GridValueFormatterParams } from "@mui/x-data-grid";
+
 export interface ITableHeadCell {
-  id: keyof IKeyOfClient;
-  label: string;
-  numeric: boolean;
+  field: keyof IKeyOfClient;
+  headerName: string;
+  flex?: number;
+  valueFormatter?: (params: GridValueFormatterParams<number>) => void;
 }
 
 export interface IKeyOfClient {
@@ -79,7 +82,7 @@ export interface IClientLost {
 }
 export type OrderType = "asc" | "desc";
 export interface TableProps {
-  tableHeadFields: readonly ITableHeadCell[];
+  tableHeadFields: ITableHeadCell[];
   onRequestSort: (
     event: React.MouseEvent<unknown>,
     property: keyof IKeyOfClient
@@ -100,5 +103,10 @@ export interface IClientProjectsBoardProps {
 }
 export interface IClientProjectsTableProps {
   clientDataTable: ClientProjectsDataType;
-  tableHeadFields: readonly ITableHeadCell[];
+  tableHeadFields: ITableHeadCell[];
+}
+export interface IClientProjectAccordionProps{
+  title: string;
+  dataTestId?: string;
+  children: JSX.Element;
 }

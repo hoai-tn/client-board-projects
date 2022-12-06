@@ -1,7 +1,9 @@
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 import ClientProjectsTable from "./client-projects-table";
-import { ITableHeadCell } from "../../interfaces";
+import { currencyFormatter } from "../../helpers";
 
+import { GridValueFormatterParams } from "@mui/x-data-grid";
+import { ITableHeadCell } from "../../constants";
 const clientOpenProjects = [
   {
     id: "1",
@@ -35,42 +37,45 @@ const clientOpenProjects = [
   },
 ];
 
-const clientOpenHead: readonly ITableHeadCell[] = [
+const clientOpenHead: ITableHeadCell[] = [
   {
-    id: "name",
-    numeric: false,
-    label: "Project Name",
+    field: "name",
+    headerName: "Project Name",
+    flex: 1,
   },
   {
-    id: "startDate",
-    numeric: false,
-    label: "Start date",
+    field: "startDate",
+    headerName: "Start date",
+    flex: 1,
   },
   {
-    id: "endDate",
-    numeric: false,
-    label: "End date",
+    field: "endDate",
+    headerName: "End date",
+    flex: 1,
   },
   {
-    id: "manager",
-    numeric: false,
-    label: "Project Manager",
+    field: "manager",
+    headerName: "Project Manager",
+    flex: 1,
   },
   {
-    id: "totalBudget",
-    numeric: true,
-    label: "Total Budget",
+    field: "totalBudget",
+    headerName: "Total Budget",
+    flex: 1,
+    valueFormatter: (params: GridValueFormatterParams<number>) =>
+      params.value ? currencyFormatter.format(params.value) : "",
   },
   {
-    id: "overheadBilled",
-    numeric: true,
-    label: "$ Overhead Billed",
+    field: "overheadBilled",
+    headerName: "$ Overhead Billed",
+    flex: 1,
+    valueFormatter: (params: GridValueFormatterParams<number>) =>
+      params.value ? currencyFormatter.format(params.value) : "",
   },
-
   {
-    id: "type",
-    numeric: false,
-    label: "Project Type",
+    field: "type",
+    headerName: "Project Type",
+    flex: 1,
   },
 ];
 export default {

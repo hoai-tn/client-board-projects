@@ -4,237 +4,259 @@ import ClientProjectsAccordion from "./client-projects-accordion";
 import { IClientProjectsBoardProps } from "../../constants";
 import ClientProjectsTable from "../client-projects-table/client-projects-table";
 
-import { ITableHeadCell } from "../../interfaces";
+import { ITableHeadCell } from "../../constants";
+import { GridValueFormatterParams } from "@mui/x-data-grid";
+import { currencyFormatter } from "../../helpers";
 
-const clientActiveHead: readonly ITableHeadCell[] = [
+const clientActiveHead: ITableHeadCell[] = [
   {
-    id: "name",
-    numeric: false,
-    label: "Project Name",
+    field: "name",
+    headerName: "Project Name",
+    flex: 1,
   },
   {
-    id: "currentPhase",
-    numeric: false,
-    label: "Current Phase",
+    field: "currentPhase",
+    headerName: "Current Phase",
+    flex: 1,
   },
   {
-    id: "startDate",
-    numeric: false,
-    label: "Start date",
+    field: "startDate",
+    headerName: "Start date",
+    flex: 1,
   },
   {
-    id: "endDate",
-    numeric: false,
-    label: "End date",
+    field: "endDate",
+    headerName: "End date",
+    flex: 1,
   },
   {
-    id: "manager",
-    numeric: false,
-    label: "Project Manager",
+    field: "manager",
+    headerName: "Project Manager",
+    flex: 1,
   },
   {
-    id: "totalBudget",
-    numeric: true,
-    label: "Total Budget",
+    field: "totalBudget",
+    headerName: "Total Budget",
+    flex: 1,
+    valueFormatter: (params: GridValueFormatterParams<number>) =>
+      params.value ? currencyFormatter.format(params.value) : "",
   },
   {
-    id: "billed",
-    numeric: true,
-    label: "% Billed",
+    field: "billed",
+    headerName: "% Billed",
+    flex: 1,
+    valueFormatter: (params: GridValueFormatterParams<number>) =>
+      params.value ? params.value + "%" : "",
   },
   {
-    id: "type",
-    numeric: false,
-    label: "Project Type",
+    field: "type",
+    headerName: "Project Type",
+    flex: 1,
   },
   {
-    id: "priority",
-    numeric: true,
-    label: "Project Priority",
+    field: "priority",
+    headerName: "Project Priority",
+    flex: 1,
   },
 ];
 
-const clientPausedHead: readonly ITableHeadCell[] = [
+const clientPausedHead: ITableHeadCell[] = [
   {
-    id: "name",
-    numeric: false,
-    label: "Project Name",
+    field: "name",
+    headerName: "Project Name",
+    flex: 1,
   },
   {
-    id: "currentPhase",
-    numeric: false,
-    label: "Current Phase",
+    field: "currentPhase",
+    headerName: "Current Phase",
+    flex: 1,
   },
   {
-    id: "startDate",
-    numeric: false,
-    label: "Start date",
+    field: "startDate",
+    headerName: "Start date",
+    flex: 1,
   },
   {
-    id: "pauseDate",
-    numeric: false,
-    label: "Pause date",
+    field: "pauseDate",
+    headerName: "Pause date",
+    flex: 1,
   },
   {
-    id: "pauseReason",
-    numeric: false,
-    label: "Pause Reason",
+    field: "pauseReason",
+    headerName: "Pause Reason",
+    flex: 1,
   },
   {
-    id: "manager",
-    numeric: false,
-    label: "Project Manager",
+    field: "manager",
+    headerName: "Project Manager",
+    flex: 1,
   },
   {
-    id: "totalBudget",
-    numeric: true,
-    label: "Total Budget",
+    field: "totalBudget",
+    headerName: "Total Budget",
+    flex: 1,
+    valueFormatter: (params: GridValueFormatterParams<number>) =>
+      params.value ? currencyFormatter.format(params.value) : "",
   },
   {
-    id: "billed",
-    numeric: true,
-    label: "% Billed",
+    field: "billed",
+    headerName: "% Billed",
+    flex: 1,
+    valueFormatter: (params: GridValueFormatterParams<number>) =>
+      params.value ? params.value + "%" : "",
   },
   {
-    id: "type",
-    numeric: false,
-    label: "Project Type",
-  },
-];
-
-const clientOpenHead: readonly ITableHeadCell[] = [
-  {
-    id: "name",
-    numeric: false,
-    label: "Project Name",
-  },
-  {
-    id: "startDate",
-    numeric: false,
-    label: "Start date",
-  },
-  {
-    id: "endDate",
-    numeric: false,
-    label: "End date",
-  },
-  {
-    id: "manager",
-    numeric: false,
-    label: "Project Manager",
-  },
-  {
-    id: "totalBudget",
-    numeric: true,
-    label: "Total Budget",
-  },
-  {
-    id: "overheadBilled",
-    numeric: true,
-    label: "$ Overhead Billed",
-  },
-
-  {
-    id: "type",
-    numeric: false,
-    label: "Project Type",
+    field: "type",
+    headerName: "Project Type",
+    flex: 1,
   },
 ];
 
-const clientCompletedHead: readonly ITableHeadCell[] = [
+const clientOpenHead: ITableHeadCell[] = [
   {
-    id: "name",
-    numeric: false,
-    label: "Project Name",
+    field: "name",
+    headerName: "Project Name",
+    flex: 1,
   },
   {
-    id: "profitMargin",
-    numeric: false,
-    label: "Profit Margin",
+    field: "startDate",
+    headerName: "Start date",
+    flex: 1,
   },
   {
-    id: "startDate",
-    numeric: true,
-    label: "Start date",
+    field: "endDate",
+    headerName: "End date",
+    flex: 1,
   },
   {
-    id: "endDate",
-    numeric: false,
-    label: "End date",
+    field: "manager",
+    headerName: "Project Manager",
+    flex: 1,
   },
   {
-    id: "manager",
-    numeric: false,
-    label: "Project Manager",
+    field: "totalBudget",
+    headerName: "Total Budget",
+    flex: 1,
+    valueFormatter: (params: GridValueFormatterParams<number>) =>
+      params.value ? currencyFormatter.format(params.value) : "",
   },
   {
-    id: "totalBudget",
-    numeric: true,
-    label: "Total Budget",
+    field: "overheadBilled",
+    headerName: "$ Overhead Billed",
+    flex: 1,
+    valueFormatter: (params: GridValueFormatterParams<number>) =>
+      params.value ? currencyFormatter.format(params.value) : "",
   },
   {
-    id: "billed",
-    numeric: true,
-    label: "% Billed",
-  },
-
-  {
-    id: "type",
-    numeric: false,
-    label: "Project Type",
+    field: "type",
+    headerName: "Project Type",
+    flex: 1,
   },
 ];
 
-const clientLostHead: readonly ITableHeadCell[] = [
+const clientCompletedHead: ITableHeadCell[] = [
   {
-    id: "name",
-    numeric: false,
-    label: "Project Name",
+    field: "name",
+    headerName: "Project Name",
+    flex: 1,
   },
   {
-    id: "lossReason",
-    numeric: false,
-    label: "Loss Reason",
+    field: "profitMargin",
+    headerName: "Profit Margin",
+    flex: 1,
+    valueFormatter: (params: GridValueFormatterParams<number>) =>
+      params.value ? params.value + "%" : "",
   },
   {
-    id: "startDate",
-    numeric: false,
-    label: "Start date",
+    field: "startDate",
+    headerName: "Start date",
+    flex: 1,
   },
   {
-    id: "endDate",
-    numeric: false,
-    label: "End date",
+    field: "endDate",
+    headerName: "End date",
+    flex: 1,
   },
   {
-    id: "manager",
-    numeric: false,
-    label: "Project Manager",
+    field: "manager",
+    headerName: "Project Manager",
+    flex: 1,
   },
   {
-    id: "totalBudget",
-    numeric: true,
-    label: "Total Budget",
+    field: "totalBudget",
+    headerName: "Total Budget",
+    flex: 1,
+    valueFormatter: (params: GridValueFormatterParams<number>) =>
+      params.value ? currencyFormatter.format(params.value) : "",
   },
   {
-    id: "overheadBilled",
-    numeric: true,
-    label: "$ Overhead Billed",
+    field: "billed",
+    headerName: "% Billed",
+    flex: 1,
+    valueFormatter: (params: GridValueFormatterParams<number>) =>
+      params.value ? params.value + "%" : "",
   },
   {
-    id: "type",
-    numeric: false,
-    label: "Project Type",
+    field: "type",
+    headerName: "Project Type",
+    flex: 1,
+  },
+];
+
+const clientLostHead: ITableHeadCell[] = [
+  {
+    field: "name",
+    headerName: "Project Name",
+    flex: 1,
+  },
+  {
+    field: "lossReason",
+    headerName: "Loss Reason",
+    flex: 1,
+  },
+  {
+    field: "startDate",
+    headerName: "Start date",
+    flex: 1,
+  },
+  {
+    field: "endDate",
+    headerName: "End date",
+    flex: 1,
+  },
+  {
+    field: "manager",
+    headerName: "Project Manager",
+    flex: 1,
+  },
+  {
+    field: "totalBudget",
+    headerName: "Total Budget",
+    flex: 1,
+    valueFormatter: (params: GridValueFormatterParams<number>) =>
+      params.value ? currencyFormatter.format(params.value) : "",
+  },
+  {
+    field: "overheadBilled",
+    headerName: "$ Overhead Billed",
+    flex: 1,
+    valueFormatter: (params: GridValueFormatterParams<number>) =>
+      params.value ? currencyFormatter.format(params.value) : "",
+  },
+  {
+    field: "type",
+    headerName: "Project Type",
+    flex: 1,
   },
 ];
 
 const ClientProjectsBoard = ({
-                              clientActiveProjects,
-                              clientPausedProjects,
-                              clientOpenProjects,
-                              clientCompletedProjects,
-                              clientLostProjects,
-                            }: IClientProjectsBoardProps) => {
+  clientActiveProjects,
+  clientPausedProjects,
+  clientOpenProjects,
+  clientCompletedProjects,
+  clientLostProjects,
+}: IClientProjectsBoardProps) => {
   return (
     <Box marginTop={1}>
       <ClientProjectsAccordion

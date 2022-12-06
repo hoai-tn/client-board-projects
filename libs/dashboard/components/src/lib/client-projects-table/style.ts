@@ -1,18 +1,29 @@
-import { styled } from "@mui/material/styles";
-import { TableCell, tableCellClasses } from "@mui/material";
-
-export const StyledTableCell = styled(TableCell)(({ theme }) => ({
-  [`&.${tableCellClasses.root}`]: {
-    borderBottom: 0,
+export const customizeDataGrid = {
+  border: "none",
+  borderRadius: 0,
+  "& .MuiDataGrid-root": {
+    border: "none !important",
   },
-  [`&.${tableCellClasses.head}`]: {
+  "& .MuiDataGrid-columnHeaders": {
     backgroundColor: "#f6e3d7",
-    color: theme.palette.common.black,
-    height: 48,
-    padding: "0 10px",
+    height: "48px !important",
+    minHeight: "48px !important",
+    userSelect: "none",
   },
-  [`&.${tableCellClasses.body}`]: {
-    fontSize: 14,
-    padding: 10,
+  ".MuiDataGrid-columnSeparator": {
+    display: "none",
   },
-}));
+  "& .MuiDataGrid-root, & .MuiDataGrid-cell:focus, & .MuiDataGrid-columnHeader:focus,& .MuiDataGrid-columnHeader:focus-within":
+    {
+      outline: 0,
+    },
+  "& .MuiDataGrid-cell, .MuiDataGrid": {
+    border: "none",
+  },
+  "& .MuiDataGrid-footerContainer": {
+    display: "hidden",
+  },
+  ".MuiDataGrid-row.Mui-selected:hover": {
+    backgroundColor: "none",
+  },
+};

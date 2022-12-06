@@ -7,7 +7,7 @@ import {
 
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import AccountTreeIcon from "@mui/icons-material/AccountTree";
-import { IClientProjectAccordionProps } from "../../interfaces";
+import { IClientProjectAccordionProps } from "../../constants";
 
 const ClientProjectsAccordion = ({
                                   title,
