@@ -95,7 +95,7 @@ export interface IClientProjectsTableProps {
   clientDataTable: ClientProjectsDataType;
   tableHeadFields: ITableHeadCell[];
 }
-export interface IClientProjectAccordionProps{
+export interface IClientProjectAccordionProps {
   title: string;
   dataTestId?: string;
   children: JSX.Element;
