@@ -1,223 +1,5 @@
 import { expect } from "chai";
 describe("Client Projects Board", () => {
-  const clientActiveHead: string[] = [
-    "Project Name",
-    "Current Phase",
-    "Start date",
-    "End date",
-    "Project Manager",
-    "Total Budget",
-    "% Billed",
-    "Project Type",
-    "Project Priority",
-  ];
-  const clientActiveProjects: object[] = [
-    {
-      name: "Project 1",
-      currentPhase: "Zoning",
-      startDate: "10/1/2022",
-      endDate: "12/31/2022",
-      manager: "Max",
-      totalBudget: "$2,000",
-      billed: "10%",
-      type: "Residential",
-      priority: "top",
-    },
-    {
-      name: "Project 2",
-      currentPhase: "Permitting",
-      startDate: "1/10/2022",
-      endDate: "1/1/2021",
-      manager: "Wick",
-      totalBudget: "$1,000",
-      billed: "40%",
-      type: "Residential",
-      priority: "left",
-    },
-    {
-      name: "Project 3",
-      currentPhase: "Pre-Design",
-      startDate: "1/10/2022",
-      endDate: "1/1/2021",
-      manager: "Rick",
-      totalBudget: "$3,000",
-      billed: "40%",
-      type: "Residential",
-      priority: "bottom",
-    },
-  ];
-  const clientPausedHead: string[] = [
-    "Project Name",
-    "Current Phase",
-    "Start date",
-    "Pause date",
-    "Pause Reason",
-    "Project Manager",
-    "Total Budget",
-    "% Billed",
-    "Project Type",
-  ];
-  const clientPausedProjects: object[] = [
-    {
-      name: "Project 1",
-      currentPhase: "Zoning",
-      startDate: "10/1/2022",
-      pauseDate: "12/31/2022",
-      pauseReason: "Residential",
-      manager: "Max",
-      totalBudget: "$2,000",
-      billed: "10%",
-      type: "top",
-    },
-    {
-      name: "Project 2",
-      currentPhase: "Permitting",
-      startDate: "10/1/2022",
-      pauseDate: "12/31/2022",
-      pauseReason: "Done",
-      manager: "Wick",
-      totalBudget: "$1,000",
-      billed: "40%",
-      type: "school",
-    },
-    {
-      name: "Project 3",
-      currentPhase: "Pre-Design",
-      startDate: "1/10/2022",
-      pauseDate: "1/1/2021",
-      pauseReason: "Residential",
-      manager: "Rick",
-      totalBudget: "$300.3",
-      billed: "40%",
-      type: "Multi-Family",
-    },
-  ];
-
-  const clientOpenHead: string[] = [
-    "Project Name",
-    "Start date",
-    "End date",
-    "Project Manager",
-    "Total Budget",
-    "$ Overhead Billed",
-    "Project Type",
-  ];
-  const clientOpenProjects: object[] = [
-    {
-      name: "Project 1",
-      startDate: "10/1/2022",
-      endDate: "12/31/2022",
-      manager: "Max",
-      totalBudget: "$2,000",
-      overheadBilled: "$10",
-      type: "Residential",
-    },
-    {
-      name: "Project 2",
-      startDate: "10/1/2022",
-      endDate: "12/31/2022",
-      manager: "Wick",
-      totalBudget: "$1,000",
-      overheadBilled: "$40",
-      type: "School",
-    },
-    {
-      name: "Project 3",
-      startDate: "1/10/2022",
-      endDate: "1/1/2021",
-      manager: "Rick",
-      totalBudget: "$3,000",
-      overheadBilled: "$40",
-      type: "Public Works",
-    },
-  ];
-
-  const clientCompletedHead: string[] = [
-    "Project Name",
-    "Profit Margin",
-    "Start date",
-    "End date",
-    "Project Manager",
-    "Total Budget",
-    "% Billed",
-    "Project Type",
-  ];
-  const clientCompletedProjects: object[] = [
-    {
-      name: "Project 1",
-      profitMargin: "10%",
-      startDate: "10/1/2022",
-      endDate: "12/31/2022",
-      manager: "Max",
-      totalBudget: "$2,000",
-      billed: "10%",
-      type: "Residential",
-    },
-    {
-      name: "Project 2",
-      profitMargin: "50%",
-      startDate: "10/1/2022",
-      endDate: "12/31/2022",
-      manager: "Wick",
-      totalBudget: "$1,000",
-      billed: "40%",
-      type: "Multi-Family",
-    },
-    {
-      name: "Project 3",
-      profitMargin: "30%",
-      startDate: "1/10/2022",
-      endDate: "1/1/2021",
-      manager: "Rick",
-      totalBudget: "$3,000",
-      billed: "40%",
-      type: "School",
-    },
-  ];
-
-  const clientLostHead: string[] = [
-    "Project Name",
-    "Loss Reason",
-    "Start date",
-    "End date",
-    "Project Manager",
-    "Total Budget",
-    "$ Overhead Billed",
-    "Project Type",
-  ];
-  const clientLostProjects: object[] = [
-    {
-      name: "Project 1",
-      lossReason: "price",
-      startDate: "10/1/2022",
-      endDate: "12/31/2022",
-      manager: "Max",
-      totalBudget: "$2,000",
-      overheadBilled: "10",
-      type: "Residential",
-    },
-    {
-      name: "Project 2",
-      lossReason: "price",
-      startDate: "1/10/2022",
-      endDate: "1/1/2021",
-      manager: "Wick",
-      totalBudget: "$1,000",
-      overheadBilled: "40",
-      type: "Multi-Family",
-    },
-    {
-      name: "Project 3",
-      lossReason: "price",
-      startDate: "1/10/2022",
-      endDate: "1/1/2021",
-      manager: "Rick",
-      totalBudget: "$3,000",
-      overheadBilled: "40",
-      type: "School",
-    },
-  ];
-
   beforeEach(() => {
     cy.visit(
       `${Cypress.env("STORYBOOK_PATH")}&id=client-projects-board--primary`
@@ -231,23 +13,21 @@ describe("Client Projects Board", () => {
       "Client Active Projects"
     );
     // Should display head table
-    clientActiveHead.forEach((item, index) => {
-      cy.get(
-        `[data-testid='client-active'] table>thead>tr>:nth-child(${
-          index + 1
-        }) span`
-      ).should("contain", item);
-    });
-    // Should display client projects in the table
-    clientActiveProjects.forEach((rowItem, rowIndex) => {
-      Object.entries(rowItem).forEach(([key, value], colIndex) => {
-        cy.get(
-          `[data-testid='client-active'] table>tbody>:nth-child(${
-            rowIndex + 1
-          })>:nth-child(${colIndex + 1})`
-        ).should("contain", value);
+    cy.get("[data-testid='client-active'] .MuiDataGrid-columnHeaderTitle")
+      .invoke("text")
+      .should(($header) => {
+        expect($header).to.equal(
+          "Project NameCurrent PhaseStart dateEnd dateProject ManagerTotal Budget% BilledProject TypeProject Priority"
+        );
       });
-    });
+    // Should display client projects in the table
+    cy.get("[data-testid='client-active'] .MuiDataGrid-cellContent")
+      .invoke("text")
+      .should(($contents) => {
+        expect($contents).to.equal(
+          "Project 1Zoning10/1/202212/31/2022Max$2,00010%ResidentialtopProject 2Permitting1/10/20221/1/2021Wick$1,00040%ResidentialleftProject 3Pre-Design1/10/20221/1/2021Rick$3,00040%Residentialbottom"
+        );
+      });
   });
   it("should display Client Paused Projects", () => {
     cy.get("[data-testid='client-paused'] p").should(
@@ -255,23 +35,20 @@ describe("Client Projects Board", () => {
       "Client Paused Projects"
     );
 
-    clientPausedHead.forEach((item, index) => {
-      cy.get(
-        `[data-testid='client-paused'] table>thead>tr>:nth-child(${
-          index + 1
-        }) span`
-      ).should("contain", item);
-    });
-
-    clientPausedProjects.forEach((rowItem, rowIndex) => {
-      Object.entries(rowItem).forEach(([key, value], colIndex) => {
-        cy.get(
-          `[data-testid='client-paused'] table>tbody>:nth-child(${
-            rowIndex + 1
-          })>:nth-child(${colIndex + 1})`
-        ).should("contain", value);
+    cy.get("[data-testid='client-paused'] .MuiDataGrid-columnHeaderTitle")
+      .invoke("text")
+      .should(($header) => {
+        expect($header).to.equal(
+          "Project NameCurrent PhaseStart datePause datePause ReasonProject ManagerTotal Budget% BilledProject Type"
+        );
       });
-    });
+    cy.get("[data-testid='client-paused'] .MuiDataGrid-cellContent")
+      .invoke("text")
+      .should(($contents) => {
+        expect($contents).to.equal(
+          "Project 1Zoning10/1/202212/31/2022ResidentialMax$2,00010%topProject 2Permitting10/1/202212/31/2022DoneWick$1,00040%schoolProject 3Pre-Design1/10/20221/1/2021ResidentialRick$300.340%Multi-Family"
+        );
+      });
   });
   it("should display Client Open Projects", () => {
     cy.get("[data-testid='client-open'] p").should(
@@ -279,23 +56,20 @@ describe("Client Projects Board", () => {
       "Client Open Opportunities"
     );
 
-    clientOpenHead.forEach((item, index) => {
-      cy.get(
-        `[data-testid='client-open'] table>thead>tr>:nth-child(${
-          index + 1
-        }) span`
-      ).should("contain", item);
-    });
-
-    clientOpenProjects.forEach((rowItem, rowIndex) => {
-      Object.entries(rowItem).forEach(([key, value], colIndex) => {
-        cy.get(
-          `[data-testid='client-open'] table>tbody>:nth-child(${
-            rowIndex + 1
-          })>:nth-child(${colIndex + 1})`
-        ).should("contain", value);
+    cy.get("[data-testid='client-open'] .MuiDataGrid-columnHeaderTitle")
+      .invoke("text")
+      .should(($header) => {
+        expect($header).to.equal(
+          "Project NameStart dateEnd dateProject ManagerTotal Budget$ Overhead BilledProject Type"
+        );
       });
-    });
+    cy.get("[data-testid='client-open'] .MuiDataGrid-cellContent")
+      .invoke("text")
+      .should(($contents) => {
+        expect($contents).to.equal(
+          "Project 110/1/202212/31/2022Max$2,000$10ResidentialProject 210/1/202212/31/2022Wick$1,000$40SchoolProject 31/10/20221/1/2021Rick$3,000$40Public Works"
+        );
+      });
   });
   it("should display Client Completed Projects", () => {
     cy.get("[data-testid='client-completed'] p").should(
@@ -303,23 +77,20 @@ describe("Client Projects Board", () => {
       "Client Completed Projects"
     );
 
-    clientCompletedHead.forEach((item, index) => {
-      cy.get(
-        `[data-testid='client-completed'] table>thead>tr>:nth-child(${
-          index + 1
-        }) span`
-      ).should("contain", item);
-    });
-
-    clientCompletedProjects.forEach((rowItem, rowIndex) => {
-      Object.entries(rowItem).forEach(([key, value], colIndex) => {
-        cy.get(
-          `[data-testid='client-completed'] table>tbody>:nth-child(${
-            rowIndex + 1
-          })>:nth-child(${colIndex + 1})`
-        ).should("contain", value);
+    cy.get("[data-testid='client-completed'] .MuiDataGrid-columnHeaderTitle")
+      .invoke("text")
+      .should(($header) => {
+        expect($header).to.equal(
+          "Project NameProfit MarginStart dateEnd dateProject ManagerTotal Budget% BilledProject Type"
+        );
       });
-    });
+    cy.get("[data-testid='client-completed'] .MuiDataGrid-cellContent")
+      .invoke("text")
+      .should(($contents) => {
+        expect($contents).to.equal(
+          "Project 110%10/1/202212/31/2022Max$2,00010%ResidentialProject 250%10/1/202212/31/2022Wick$1,00040%Multi-FamilyProject 330%1/10/20221/1/2021Rick$3,00040%School"
+        );
+      });
   });
   it("should display Client Lost Projects", () => {
     cy.get("[data-testid='client-lost'] p").should(
@@ -327,32 +98,20 @@ describe("Client Projects Board", () => {
       "Client Lost Projects"
     );
 
-    clientLostHead.forEach((item, index) => {
-      cy.get(
-        `[data-testid='client-lost'] table>thead>tr>:nth-child(${
-          index + 1
-        }) span`
-      ).should("contain", item);
-    });
-
-    clientLostProjects.forEach((rowItem, rowIndex) => {
-      Object.entries(rowItem).forEach(([key, value], colIndex) => {
-        cy.get(
-          `[data-testid='client-lost'] table>tbody>:nth-child(${
-            rowIndex + 1
-          })>:nth-child(${colIndex + 1})`
-        ).should("contain", value);
+    cy.get("[data-testid='client-lost'] .MuiDataGrid-columnHeaderTitle")
+      .invoke("text")
+      .should(($header) => {
+        expect($header).to.equal(
+          "Project NameLoss ReasonStart dateEnd dateProject ManagerTotal Budget$ Overhead BilledProject Type"
+        );
       });
-    });
-  });
-
-  it("should fill Client Projects data on the table", () => {
-    clientOpenProjects.forEach((rowItem, rowIndex) => {
-      Object.entries(rowItem).forEach(([key, value], colIndex) => {
-        cy.get(
-          `table>tbody>:nth-child(${rowIndex + 1})>:nth-child(${colIndex + 1})`
-        ).should("contain", value);
+    cy.get("[data-testid='client-lost'] .MuiDataGrid-cellContent")
+      .invoke("text")
+      .should(($contents) => {
+        console.log($contents);
+        expect($contents).to.equal(
+          "Project 1price10/1/202212/31/2022Max$2,000$10ResidentialProject 2price1/10/20221/1/2021Wick$1,000$40Multi-FamilyProject 3price1/10/20221/1/2021Rick$3,000$40School"
+        );
       });
-    });
   });
 });

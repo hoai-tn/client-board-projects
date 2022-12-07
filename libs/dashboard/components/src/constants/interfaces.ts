@@ -80,16 +80,6 @@ export interface IClientLost {
   overheadBilled: number;
   type: string;
 }
-export type OrderType = "asc" | "desc";
-export interface TableProps {
-  tableHeadFields: ITableHeadCell[];
-  onRequestSort: (
-    event: React.MouseEvent<unknown>,
-    property: keyof IKeyOfClient
-  ) => void;
-  order: OrderType;
-  orderBy: string | null;
-}
 
 export type ClientProjectsDataType = Array<
   IClientActive | IClientPaused | IClientOpen | IClientCompleted | IClientLost
