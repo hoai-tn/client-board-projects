@@ -3,9 +3,9 @@ import { IClientProjectsTableProps } from "../../constants";
 import { customizeDataGrid } from "./style";
 
 const ClientProjectsTable = ({
-  clientDataTable,
-  tableHeadFields,
-}: IClientProjectsTableProps) => {
+                              clientDataTable,
+                              tableHeadFields,
+                            }: IClientProjectsTableProps) => {
   return (
     <DataGrid
       columns={tableHeadFields}
