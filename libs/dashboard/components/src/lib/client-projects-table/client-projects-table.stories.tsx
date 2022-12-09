@@ -37,7 +37,7 @@ const clientOpenProjects = [
   },
 ];
 
-const clientOpenHead: ITableHeadCell[] = [
+const clientOpenHead: object[] = [
   {
     field: "name",
     headerName: "Project Name",

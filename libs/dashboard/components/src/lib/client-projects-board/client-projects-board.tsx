@@ -4,15 +4,55 @@ import ClientProjectsAccordion from "./client-projects-accordion";
 import { IClientProjectsBoardProps } from "../../constants";
 import ClientProjectsTable from "../client-projects-table/client-projects-table";
 
-import { ITableHeadCell } from "../../constants";
 import { GridValueFormatterParams } from "@mui/x-data-grid";
 import { currencyFormatter } from "../../helpers";
 
-const clientActiveHead: ITableHeadCell[] = [
+const totalBudget = {
+  field: "totalBudget",
+  headerName: "Total Budget",
+  flex: 1,
+  valueFormatter: (params: GridValueFormatterParams<number>) =>
+    params.value ? currencyFormatter.format(params.value) : "",
+};
+
+const projectName = {
+  field: "name",
+  headerName: "Project Name",
+  flex: 1,
+};
+
+const startDate = {
+  field: "startDate",
+  headerName: "Start date",
+  flex: 1,
+};
+
+const endDate = {
+  field: "endDate",
+  headerName: "End date",
+  flex: 1,
+};
+const projectManager = {
+  field: "manager",
+  headerName: "Project Manager",
+  flex: 1,
+};
+const projectType = {
+  field: "type",
+  headerName: "Project Type",
+  flex: 1,
+};
+const billed = {
+  field: "billed",
+  headerName: "% Billed",
+  flex: 1,
+  valueFormatter: (params: GridValueFormatterParams<number>) =>
+    params.value ? params.value + "%" : "",
+};
+
+const clientActiveHead: object[] = [
   {
-    field: "name",
-    headerName: "Project Name",
-    flex: 1,
+    ...projectName,
   },
   {
     field: "currentPhase",
@@ -20,38 +60,22 @@ const clientActiveHead: ITableHeadCell[] = [
     flex: 1,
   },
   {
-    field: "startDate",
-    headerName: "Start date",
-    flex: 1,
+    ...startDate,
   },
   {
-    field: "endDate",
-    headerName: "End date",
-    flex: 1,
+    ...endDate,
   },
   {
-    field: "manager",
-    headerName: "Project Manager",
-    flex: 1,
+    ...projectManager,
   },
   {
-    field: "totalBudget",
-    headerName: "Total Budget",
-    flex: 1,
-    valueFormatter: (params: GridValueFormatterParams<number>) =>
-      params.value ? currencyFormatter.format(params.value) : "",
+    ...totalBudget,
   },
   {
-    field: "billed",
-    headerName: "% Billed",
-    flex: 1,
-    valueFormatter: (params: GridValueFormatterParams<number>) =>
-      params.value ? params.value + "%" : "",
+    ...billed,
   },
   {
-    field: "type",
-    headerName: "Project Type",
-    flex: 1,
+    ...projectType,
   },
   {
     field: "priority",
@@ -60,11 +84,9 @@ const clientActiveHead: ITableHeadCell[] = [
   },
 ];
 
-const clientPausedHead: ITableHeadCell[] = [
+const clientPausedHead: object[] = [
   {
-    field: "name",
-    headerName: "Project Name",
-    flex: 1,
+    ...projectName,
   },
   {
     field: "currentPhase",
@@ -72,9 +94,7 @@ const clientPausedHead: ITableHeadCell[] = [
     flex: 1,
   },
   {
-    field: "startDate",
-    headerName: "Start date",
-    flex: 1,
+    ...startDate,
   },
   {
     field: "pauseDate",
@@ -87,58 +107,34 @@ const clientPausedHead: ITableHeadCell[] = [
     flex: 1,
   },
   {
-    field: "manager",
-    headerName: "Project Manager",
-    flex: 1,
+    ...projectManager,
   },
   {
-    field: "totalBudget",
-    headerName: "Total Budget",
-    flex: 1,
-    valueFormatter: (params: GridValueFormatterParams<number>) =>
-      params.value ? currencyFormatter.format(params.value) : "",
+    ...totalBudget,
   },
   {
-    field: "billed",
-    headerName: "% Billed",
-    flex: 1,
-    valueFormatter: (params: GridValueFormatterParams<number>) =>
-      params.value ? params.value + "%" : "",
+    ...billed,
   },
   {
-    field: "type",
-    headerName: "Project Type",
-    flex: 1,
+    ...projectType,
   },
 ];
 
-const clientOpenHead: ITableHeadCell[] = [
+const clientOpenHead: object[] = [
   {
-    field: "name",
-    headerName: "Project Name",
-    flex: 1,
+    ...projectName,
   },
   {
-    field: "startDate",
-    headerName: "Start date",
-    flex: 1,
+    ...startDate,
   },
   {
-    field: "endDate",
-    headerName: "End date",
-    flex: 1,
+    ...endDate,
   },
   {
-    field: "manager",
-    headerName: "Project Manager",
-    flex: 1,
+    ...projectManager,
   },
   {
-    field: "totalBudget",
-    headerName: "Total Budget",
-    flex: 1,
-    valueFormatter: (params: GridValueFormatterParams<number>) =>
-      params.value ? currencyFormatter.format(params.value) : "",
+    ...totalBudget,
   },
   {
     field: "overheadBilled",
@@ -148,17 +144,13 @@ const clientOpenHead: ITableHeadCell[] = [
       params.value ? currencyFormatter.format(params.value) : "",
   },
   {
-    field: "type",
-    headerName: "Project Type",
-    flex: 1,
+    ...projectType,
   },
 ];
 
-const clientCompletedHead: ITableHeadCell[] = [
+const clientCompletedHead: object[] = [
   {
-    field: "name",
-    headerName: "Project Name",
-    flex: 1,
+    ...projectName,
   },
   {
     field: "profitMargin",
@@ -168,46 +160,28 @@ const clientCompletedHead: ITableHeadCell[] = [
       params.value ? params.value + "%" : "",
   },
   {
-    field: "startDate",
-    headerName: "Start date",
-    flex: 1,
+    ...startDate,
   },
   {
-    field: "endDate",
-    headerName: "End date",
-    flex: 1,
+    ...endDate,
   },
   {
-    field: "manager",
-    headerName: "Project Manager",
-    flex: 1,
+    ...projectManager,
   },
   {
-    field: "totalBudget",
-    headerName: "Total Budget",
-    flex: 1,
-    valueFormatter: (params: GridValueFormatterParams<number>) =>
-      params.value ? currencyFormatter.format(params.value) : "",
+    ...totalBudget,
   },
   {
-    field: "billed",
-    headerName: "% Billed",
-    flex: 1,
-    valueFormatter: (params: GridValueFormatterParams<number>) =>
-      params.value ? params.value + "%" : "",
+    ...billed,
   },
   {
-    field: "type",
-    headerName: "Project Type",
-    flex: 1,
+    ...projectType,
   },
 ];
 
-const clientLostHead: ITableHeadCell[] = [
+const clientLostHead: object[] = [
   {
-    field: "name",
-    headerName: "Project Name",
-    flex: 1,
+    ...projectName,
   },
   {
     field: "lossReason",
@@ -215,26 +189,16 @@ const clientLostHead: ITableHeadCell[] = [
     flex: 1,
   },
   {
-    field: "startDate",
-    headerName: "Start date",
-    flex: 1,
+    ...startDate,
   },
   {
-    field: "endDate",
-    headerName: "End date",
-    flex: 1,
+    ...endDate,
   },
   {
-    field: "manager",
-    headerName: "Project Manager",
-    flex: 1,
+    ...projectManager,
   },
   {
-    field: "totalBudget",
-    headerName: "Total Budget",
-    flex: 1,
-    valueFormatter: (params: GridValueFormatterParams<number>) =>
-      params.value ? currencyFormatter.format(params.value) : "",
+    ...totalBudget,
   },
   {
     field: "overheadBilled",
@@ -244,19 +208,17 @@ const clientLostHead: ITableHeadCell[] = [
       params.value ? currencyFormatter.format(params.value) : "",
   },
   {
-    field: "type",
-    headerName: "Project Type",
-    flex: 1,
+    ...projectType,
   },
 ];
 
 const ClientProjectsBoard = ({
-                              clientActiveProjects,
-                              clientPausedProjects,
-                              clientOpenProjects,
-                              clientCompletedProjects,
-                              clientLostProjects,
-                            }: IClientProjectsBoardProps) => {
+  clientActiveProjects,
+  clientPausedProjects,
+  clientOpenProjects,
+  clientCompletedProjects,
+  clientLostProjects,
+}: IClientProjectsBoardProps) => {
   return (
     <Box marginTop={1}>
       <ClientProjectsAccordion

@@ -93,7 +93,7 @@ export interface IClientProjectsBoardProps {
 }
 export interface IClientProjectsTableProps {
   clientDataTable: ClientProjectsDataType;
-  tableHeadFields: ITableHeadCell[];
+  tableHeadFields: any[];
 }
 export interface IClientProjectAccordionProps {
   title: string;
